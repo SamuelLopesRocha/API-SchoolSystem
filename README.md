@@ -51,11 +51,13 @@ Acesse a documentação interativa em:
 
 👉 http://localhost:5000/apidocs/
 
-🔄 Estrutura de Endpoints
+## 🔄 Estrutura de Endpoints
 
-📘 Alunos
+### 📘 Alunos
 
-POST /alunos
+**POST** `/alunos`
+
+```json
 {
   "idade": 18,
   "nome": "João da Silva",
@@ -67,8 +69,8 @@ PUT /alunos/1
   "idade": 19,
   "nome": "João Pedro da Silva",
   "observacoes": "Atualizado"
-
 }
+
 GET /alunos
 Retorna todos os alunos.
 
@@ -87,8 +89,8 @@ POST /professores
   "materia": "matematica",
   "nome": "Alberto",
   "observacoes": "Professor da tarde"
-
 }
+
 PUT /professores/1
 {
   "idade": 20,
@@ -141,6 +143,7 @@ DELETE /turmas/1
 }
 
 📁 Organização do Projeto (Arquitetura MVC)
+
 ├── app.py
 ├── alunos/
 │   ├── alunos_model.py
@@ -179,4 +182,5 @@ Integração com Swagger
 
 Docker e containerização
 
-A API está modularizada e pronta para evoluções futuras, como PostgreSQL, deploy em nuvem e muito mais 🚀
+A API está modularizada e pronta para evoluções futuras, como autenticação, PostgreSQL, deploy em nuvem e muito mais 🚀
+A API está modularizada e pronta para evoluções futuras, como autenticação, PostgreSQL, deploy em nuvem e muito mais 🚀
