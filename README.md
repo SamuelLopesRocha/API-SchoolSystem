@@ -40,7 +40,7 @@ pip install -r requirements.txt
 
 🐳 Executando com Docker
 
-Crie a imagem Docker
+Crie a imagem Docker: 
 docker build -t api-escolar
 
 Rode o container
