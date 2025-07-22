@@ -52,7 +52,9 @@ Acesse a documentação interativa em:
 👉 http://localhost:5000/apidocs/
 
 🔄 Estrutura de Endpoints
+
 📘 Alunos
+
 POST /alunos
 {
   "idade": 18,
