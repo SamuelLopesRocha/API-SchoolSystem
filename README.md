@@ -1,133 +1,116 @@
-📚 API Escola – Alunos, Professores e Turmas
-Esta API foi desenvolvida em Python utilizando o framework Flask com o objetivo de simular o gerenciamento de uma escola, contendo três entidades principais: Aluno, Professor e Turma. A aplicação segue a arquitetura MVC, possui banco de dados SQLite, documentação via Swagger, testes automatizados com TDD e está pronta para containerização com Docker.
+## 📚 API Escola – Alunos, Professores e Turmas
 
-🛠 Tecnologias Utilizadas
-Python
+Esta API foi desenvolvida em **Python** utilizando o framework **Flask** com o objetivo de simular o gerenciamento de uma escola, contendo três entidades principais: **Aluno**, **Professor** e **Turma**.
 
-Flask
+A aplicação segue a arquitetura **MVC**, utiliza **SQLite** como banco de dados, possui **documentação via Swagger**, **testes automatizados com TDD** e está **pronta para containerização com Docker**.
 
-Flask SQLAlchemy
+---
 
-Flask CORS
+## 🛠 Tecnologias Utilizadas
 
-Swagger (Flasgger)
+- Python
+- Flask
+- Flask SQLAlchemy
+- Flask CORS
+- Swagger (Flasgger)
+- SQLite
+- Docker
+- TDD (Test Driven Development)
+- Estrutura MVC
 
-SQLite
+---
 
-Docker
+## ▶️ Como Executar a API Localmente
 
-TDD (Test Driven Development)
+1. **Crie e ative o ambiente virtual**
 
-Estrutura MVC
+   No Git Bash ou terminal:
 
-▶️ Como Executar a API Localmente
-Crie e ative o ambiente virtual:
+   ```bash
+   python -m venv venv
 
-no git bash copie os seguintes codigos:
-python -m venv venv
-./venv/Scripts/Activate  # No Windows
-source venv/bin/activate # No Linux/macOS
+   # Windows:
+   ./venv/Scripts/Activate
 
-Instale as dependências:
-pip install flask
-pip install requests
+   # Linux/macOS:
+   source venv/bin/activate
 
-Execute o projeto:
-python app.py
+Instale as dependências
+pip install -r requirements.txt
 
+Execute a aplicação:
 🐳 Executando com Docker
-Crie a imagem:
+
+Crie a imagem Docker
 docker build -t api-escolar .
 
-Rode o container:
+Rode o container
 docker run -d -p 5000:5000 api-escolar
 
 📄 Documentação Swagger
-Acesse a documentação interativa através de:
-http://localhost:5000/apidocs/
+Acesse a documentação interativa em:
+
+👉 http://localhost:5000/apidocs/
 
 🔄 Estrutura de Endpoints
-
 📘 Alunos
-✅ POST /alunos
-Exemplo de entrada:
+POST /alunos
 {
   "idade": 18,
   "nome": "João da Silva",
   "observacoes": "Aluno dedicado"
 }
-Resposta esperada:
-{
-  "mensagem": "Aluno criado com sucesso!"
-}
 
-🔄 PUT /alunos/1
-Exemplo de entrada:
+PUT /alunos/1
 {
   "idade": 19,
   "nome": "João Pedro da Silva",
   "observacoes": "Atualizado"
-}
-Resposta esperada:
-{
-  "mensagem": "Aluno ATUALIZADO com sucesso!"
-}
 
-📥 GET /alunos
+}
+GET /alunos
 Retorna todos os alunos.
 
-📥 GET /alunos/1
-Retorna um aluno específico pelo ID.
+GET /alunos/1
+Retorna um aluno específico.
 
-❌ DELETE /alunos/1
-Resposta esperada:
+DELETE /alunos/1
 {
   "mensagem": "Aluno DELETADO com sucesso!"
 }
 
 🧑‍🏫 Professores
-✅ POST /professores
-Exemplo de entrada:
+POST /professores
 {
   "idade": 20,
   "materia": "matematica",
   "nome": "Alberto",
   "observacoes": "Professor da tarde"
-}
-Resposta esperada:
-{
-  "mensagem": "Professor criado com sucesso!"
-}
 
-🔄 PUT /professores/1
+}
+PUT /professores/1
 {
   "idade": 20,
-  "materia": "hISTORIA",
+  "materia": "historia",
   "nome": "Alberto",
-  "observacoes": "Professor da NOITE"
-}
-Resposta esperada:
-{
-  "mensagem": "Professor ATUALIZADO com sucesso!"
+  "observacoes": "Professor da noite"
 }
 
-📥 GET /professores
+GET /professores
 Retorna todos os professores.
 
-📥 GET /professores/1
-Retorna um professor específico pelo ID.
+GET /professores/1
+Retorna um professor específico.
 
-❌ DELETE /professores/1
-Resposta esperada:
+DELETE /professores/1
 {
   "mensagem": "Professor DELETADO com sucesso!"
 }
 
 🏫 Turmas
-⚠️ A criação de uma turma exige que a API de reserva de salas esteja funcionando corretamente, pois depende de professor_id e sala_id.
+⚠️ A criação de uma turma exige que a API de reserva de salas esteja funcionando corretamente (dependência de professor_id e sala_id).
 
-✅ POST /turmas
-Exemplo de entrada:
+POST /turmas
 {
   "ativo": true,
   "descricao": "6º ano A - Tarde",
@@ -135,12 +118,8 @@ Exemplo de entrada:
   "sala_id": 1,
   "turma_id": 1
 }
-Resposta esperada:
-{
-  "mensagem": "Turma criada com sucesso!"
-}
 
-🔄 PUT /turmas/1
+PUT /turmas/1
 {
   "ativo": false,
   "descricao": "TURMA ENCERRADA",
@@ -148,24 +127,19 @@ Resposta esperada:
   "sala_id": 1,
   "turma_id": 1
 }
-Resposta esperada:
-{
-  "mensagem": "Turma ATUALIZADA com sucesso!"
-}
 
-📥 GET /turmas
+GET /turmas
 Retorna todas as turmas.
 
-📥 GET /turmas/1
-Retorna uma turma específica pelo ID.
+GET /turmas/1
+Retorna uma turma específica.
 
-❌ DELETE /turmas/1
-Resposta esperada:
+DELETE /turmas/1
 {
   "mensagem": "Turma DELETADA com sucesso!"
 }
 
-📁 Organização do Projeto (MVC)
+📁 Organização do Projeto (Arquitetura MVC)
 ├── app.py
 ├── alunos/
 │   ├── alunos_model.py
@@ -190,5 +164,18 @@ Resposta esperada:
 │   └── test_turmas.py
 ├── Dockerfile
 └── requirements.txt
+
 ✅ Conclusão
-Esse projeto é ideal para praticar e aplicar conceitos de API RESTful, TDD, Flask e organização de projetos com boas práticas. A API está modularizada e pronta para evoluções futuras como autenticação, integração com banco de dados PostgreSQL, deploy em nuvem e muito mais!
+Esse projeto é ideal para praticar e aplicar conceitos como:
+
+APIs RESTful com Flask
+
+Arquitetura limpa (MVC)
+
+Testes automatizados com TDD
+
+Integração com Swagger
+
+Docker e containerização
+
+A API está modularizada e pronta para evoluções futuras, como PostgreSQL, deploy em nuvem e muito mais 🚀
