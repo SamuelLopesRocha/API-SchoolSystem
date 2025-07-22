@@ -54,8 +54,9 @@ Acesse a documentação interativa em:
 
 ### 📘 Alunos
 
-**POST** `/alunos`
+**POST** `/alunos` 
 
+```json
 {
   "idade": 18,
   "nome": "João da Silva",
