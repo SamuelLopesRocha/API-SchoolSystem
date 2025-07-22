@@ -26,7 +26,6 @@ A aplicação segue a arquitetura **MVC**, utiliza **SQLite** como banco de dado
 
    No Git Bash ou terminal:
 
-   ```bash
    python -m venv venv
 
    # Windows:
@@ -57,7 +56,6 @@ Acesse a documentação interativa em:
 
 **POST** `/alunos`
 
-```json
 {
   "idade": 18,
   "nome": "João da Silva",
