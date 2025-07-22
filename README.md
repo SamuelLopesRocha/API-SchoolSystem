@@ -38,11 +38,10 @@ A aplicação segue a arquitetura **MVC**, utiliza **SQLite** como banco de dado
 Instale as dependências
 pip install -r requirements.txt
 
-Execute a aplicação:
 🐳 Executando com Docker
 
 Crie a imagem Docker
-docker build -t api-escolar .
+docker build -t api-escolar
 
 Rode o container
 docker run -d -p 5000:5000 api-escolar
